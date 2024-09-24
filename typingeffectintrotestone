@@ -1,0 +1,17 @@
+document.addEventListener("DOMContentLoaded", function () {
+  const textContainer = document.getElementById('text-container');
+  const text = `hi there.\n\nwelcome to the portfolio of Christopher Harrison.\n\nthis is an interactive space where you can ask questions to find the information you need.\n\nhow can i help?`;
+  
+  let index = 0;
+
+  function typeText() {
+    if (index < text.length) {
+      textContainer.innerHTML += text[index] === '\n' ? '<br>' : text[index];
+      index++;
+      setTimeout(typeText, 50); // Adjust typing speed here
+    }
+  }
+
+  textContainer.innerHTML = ''; // Clear existing content
+  typeText(); // Start typing effect on page load
+});
